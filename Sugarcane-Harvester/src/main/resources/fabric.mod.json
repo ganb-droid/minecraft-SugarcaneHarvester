@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "sugarcane-harvester",
+  "version": "${version}",
+
+  "name": "Sugarcane-Harvester",
+  "description": "Sugaecane Harvester Mod with Minecraft",
+  "authors": [],
+  "contact": {},
+
+  "license": "MIT",
+  "icon": "assets/sugarcane-harvester/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": ["com.github.ganb_droid.sugarcaneHarvester.client.SugarcaneHarvesterDataGenerator"],
+    "client": ["com.github.ganb_droid.sugarcaneHarvester.client.SugarcaneHarvesterClient"],
+    "main": ["com.github.ganb_droid.sugarcaneHarvester.SugarcaneHarvester"]
+  },
+
+  "mixins": [
+    "sugarcane-harvester.mixins.json"
+    ,{
+      "config": "sugarcane-harvester.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
